@@ -1,3 +1,6 @@
+# 2022/6/1
+# athur
+
 import tensorflow as tf
 from tensorflow import keras
 import tensorflow_datasets as tfds
@@ -38,6 +41,8 @@ output = model.fit(train_images, train_labels, epochs=10)
 test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
 
 print('\nTest accuracy:', test_acc)
+
+model.save(r"./model_vgg.h5")
 
 plt.plot(output.history['accuracy'], label='accuracy')
 plt.plot(output.history['val_accuracy'], label = 'val_accuracy')
